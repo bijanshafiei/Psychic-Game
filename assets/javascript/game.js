@@ -5,26 +5,49 @@
 // If user guess matches computers guess, wins go up by one
 
 
-
+// Establishes global variables
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var guessedLettersArr = [];
+var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+var wins = 0;
+var losses = 0;
+var guessesLeft = 10;
 
+// Captures users key press and converts to lowercase for error handling
 document.onkeyup = function() {
 	var userGuess = String.fromCharCode(event.keyCode).
 		toLowerCase();
 
-		console.log(userGuess);
-
-	var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+		console.log(userGuess)
+	
 
 		console.log(computerGuess);
 
+	// Compares user guess to computer guess and increments wins/losses
 	if (userGuess === computerGuess) {
 		alert("You're a Psychic!");
+		wins++;
+		guessesLeft = 9;
 	}
 
-	else {
+	else if (userGuess !== computerGuess) {
 		alert("Please choose again")
+		losses++;
+
+		if (guessesLeft > 0) {
+			guessesLeft--;
+		}else {
+			guessesLeft = 10;
+		}
+		
 	}
 
+	
+
+
+
+console.log(wins);
+console.log(losses);
+console.log(guessesLeft);
 
 }
