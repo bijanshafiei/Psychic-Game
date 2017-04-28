@@ -35,6 +35,16 @@ document.onkeyup = function() {
 		}else {
 			guessesLeft = 10;
 		}
+
+	if (guessesLeft === 0) {
+		losses++;
+		alert("Losses: " + losses);
+
+	}
+
+
+
+	
 		
 	
 
