@@ -28,7 +28,7 @@ document.onkeyup = function() {
 	if (userGuess === computerGuess) {
 		wins++;
 		guessesLeft = 10;
-		
+		alert("Wins: " + wins)
 	}
 
 	else if (guessesLeft > 0) {
@@ -39,7 +39,7 @@ document.onkeyup = function() {
 
 	if (guessesLeft === 0) {
 		losses++;
-		
+		alert("Losses: " + losses);
 
 	}
 
