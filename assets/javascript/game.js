@@ -18,4 +18,13 @@ document.onkeyup = function() {
 
 		console.log(computerGuess);
 
+	if (userGuess === computerGuess) {
+		alert("You're a Psychic!");
+	}
+
+	else {
+		alert("Please choose again")
+	}
+
+
 }
