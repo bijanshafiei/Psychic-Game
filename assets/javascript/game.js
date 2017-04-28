@@ -15,8 +15,9 @@ var guessesLeft = 10;
 
 // Captures users key press and converts to lowercase for error handling
 document.onkeyup = function() {
-	var userGuess = String.fromCharCode(event.keyCode).
-		toLowerCase();
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	guessedLettersArr.push(userGuess);
+
 
 		console.log(userGuess)
 	
@@ -27,7 +28,7 @@ document.onkeyup = function() {
 	if (userGuess === computerGuess) {
 		wins++;
 		guessesLeft = 10;
-		alert("Wins: " + wins)
+		
 	}
 
 	else if (guessesLeft > 0) {
@@ -38,22 +39,20 @@ document.onkeyup = function() {
 
 	if (guessesLeft === 0) {
 		losses++;
-		alert("Losses: " + losses);
+		
 
 	}
 
+		console.log(wins);
+		console.log(losses);
+		console.log(guessesLeft);
 
+		var html = "<p>Guess what letter I'm thinking of</p>" +
+		"<p>Wins: " + wins + "</p>" +
+		"<p>Losses: " + losses + "</p>" +
+		"<p>Guesses Left: "+ guessesLeft + "</p>" +
+		"<p>Your Guesses so far: " + guessedLettersArr + "</p>";
 
-	
-		
-	
-
-	
-
-
-
-console.log(wins);
-console.log(losses);
-console.log(guessesLeft);
+		document.querySelector("#game").innerHTML = html;
 
 }
