@@ -23,24 +23,20 @@ document.onkeyup = function() {
 
 		console.log(computerGuess);
 
-	// Compares user guess to computer guess and increments wins/losses
+	// Compares user guess to computer guess and increments wins/losses. updates guesses left and resets when user loses.
 	if (userGuess === computerGuess) {
-		alert("You're a Psychic!");
 		wins++;
-		guessesLeft = 9;
+		guessesLeft = 10;
+		alert("Wins: " + wins)
 	}
 
-	else if (userGuess !== computerGuess) {
-		alert("Please choose again")
-		losses++;
-
-		if (guessesLeft > 0) {
+	else if (guessesLeft > 0) {
 			guessesLeft--;
 		}else {
 			guessesLeft = 10;
 		}
 		
-	}
+	
 
 	
 
