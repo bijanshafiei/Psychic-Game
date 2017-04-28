@@ -47,6 +47,7 @@ document.onkeyup = function() {
 		console.log(losses);
 		console.log(guessesLeft);
 
+		// Writes to inner HTML
 		var html = "<p>Guess what letter I'm thinking of</p>" +
 		"<p>Wins: " + wins + "</p>" +
 		"<p>Losses: " + losses + "</p>" +
